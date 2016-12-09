@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }}-Register{% endblock %}
+{% block body %}
+    <div class="container">
+     <div class="well">
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.username) }}
+            {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.username) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.password.first) }}
+            {{ form_widget(form.password.first, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.password.first) }}
+        </div>        <div class="form-group">
+            {{ form_label(form.password.second) }}
+            {{ form_widget(form.password.second, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.password.second) }}
+        </div>
+        <button type="submit" class="btn btn-success">Register!</button>
+        {{ form_end(form) }}
+     </div>
+    </div>
+{% endblock %}
